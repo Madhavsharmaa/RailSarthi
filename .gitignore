@@ -1,0 +1,23 @@
+# Virtual Environment (Do NOT track venv)
+venv/
+env/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore environment variable files (security reasons)
+*.env
+
+# Ignore SQLite database files (if any)
+*.sqlite3
+
+# Ignore instance folder (used by Flask for config files)
+instance/
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore compiled files
+*.log
