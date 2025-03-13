@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coach Position | Rail Sarthi</title>
+
+<style>
+    
+
+    
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 8%;
+        display: flex;
+        justify-content: center;
+        align-items: center;    
+        padding: 10px 15px;
+        background-color: white;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    
+    .logo {  
+        padding-left:490px;
+        max-height: 100%; 
+    }
+    
+    .side-drawer-button {
+        position: absolute;       
+        left: 15px;            
+        margin-bottom: 10px;
+    }
+
+    .search-form {
+        display: none; 
+    }
+
+
+
+@media (max-width: 700px) {
+.logo{
+    padding-left:80px;
+    margin-right: 16px;
+    margin-left: 0px;
+    width:70%; 
+    height: auto;
+}
+}
+
+
+.container {
+    display: flex;
+    margin-left:5px;
+    padding-left:100px
+    justify-content: flex-start;
+    height: 90vh;
+    overflow-x: hidden;
+    overflow-y: auto;  
+  }
+
+  .right-content {
+    background-color:#66668756;
+    border-radius:10px;
+    text-align:center;
+    width:370px;
+    padding-top:30px;
+    overflow: hidden; 
+    color: #000000;
+    a {
+        color: black;
+        padding:8px;
+        text-align:left;
+      }
+
+      p {
+        color: black;
+        padding:8px;
+      }
+
+    a:hover{
+        background-color: #666687;
+        border-radius:5px;
+    }
+  }
+
+
+  .info-box {
+    width: 900px;
+    border-radius:20px;
+    font-size: 15px;
+    box-shadow: 1.5px 1.5px 4px #66668756, -1.5px -1.5px 4px rgba(0.1, 0.1, 0, 0.1), 1.5px -1.5px 4px rgba(0.1, 0.1, 0, 0.1), -1.5px 1.5px 4px rgba(0.1, 0.1, 0, 0.1);
+    overflow-x: hidden;
+    overflow-y: auto; 
+    word-wrap: break-word; 
+    overflow-wrap: break-word;
+    text-align:center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-sizing: border-box; 
+    border-color: #666687a8; 
+  }
+
+  .info-box h2 {
+    margin-top: 0;
+  }
+
+  .info-box p {
+    margin-bottom: 0;
+  }
+
+  .coach-type, .travel-class {
+    margin-bottom: 20px;
+    padding: 100px;
+}
+
+
+h2{
+    background-color:#66668756;
+    border-radius:10px;
+}
+
+
+.table-container {
+    margin-top: 20px;
+}
+.railway-table {
+
+    font-size: 15px;
+    width: 100%;
+    border-collapse: collapse;
+}
+.railway-table th, .railway-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+.railway-table th {
+    background-color: #f2f2f2;
+}
+
+
+.search-form{
+    padding-left:220px;
+}
+
+</style>
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='home_page.css') }}">
+
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='static/a1.png') }}">
+
+</head>
+<body>
+
+
+
+
+    <header class="header">
+        <button class="side-drawer-button" id="toggle-btn">☰</button>
+
+        <a href="/">
+            <img src="{{ url_for('static', filename='RAIL SARTHI.png') }}" width="200" height="40" class="logo">
+        </a>
+
+        <button class="login-signup">LogIn/SignUp</button>
+    </header>
+
+
+
+
+
+
+
+<div id="side-drawer" class="side-drawer">
+    <br><br><br>
+
+    <br>
+
+    <a>SERVICES</a>
+
+    <a href="{{ url_for('trains_tt') }}">
+        <img src="static/tt.png" width="20" height="20">
+        <span class="link-text">Train Time Table</span>
+    </a>
+
+    <a href="{{ url_for('live_status') }}">
+        <img src="static/live_status.png" width="20" height="20">
+        <span class="link-text">Live Train Status</span>
+    </a>
+    <a href="{{ url_for('show_coach_position') }}">
+        <img src="static/coachpos.png" width="20" height="20">
+        <span class="link-text">Train Coach Position</span>
+    </a>
+  
+    <br><hr><br>
+
+
+    <a>FEATURES</a>
+
+    <a href="{{ url_for('fare') }}">
+        <img src="static/calc.png" width="20" height="20">
+        <span class="link-text">Fare Calculator</span>
+    </a>
+
+    <a href="{{ url_for('announcement') }}">
+        <img src="static/trainfacts.png" width="20" height="20">
+        <span class="link-text">Announcements</span>
+    </a>
+    <a href="{{ url_for('facts') }}">
+        <img src="static/trainfact.png" width="20" height="20">
+        <span class="link-text">Train Facts</span>
+    </a>
+
+
+</div>
+<div id="overlay" class="overlay"></div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+<br><br><br><br><br><br>
+
+
+
+
+<div class="search-form">
+    <form action="{{ url_for('show_coach_position') }}" method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.train_number.label }} {{ form.train_number() }}
+        {{ form.submit(class_="search-button") }} 
+    </form>
+</div>
+
+<br><br>
+
+
+
+
+
+    <div class="container">
+        <div class="info-box">
+            {% if train_info.title !="No Data Found, check the train number"  %}
+
+            <h2 class="text-center my-3"><u>{{ train_info.title }} Train Coach Position</u></h2>
+            <br><br>
+            <div class="text-justify mx-3">{{ train_info.description }}</div>
+            <br>
+            <div class="text-justify mx-3">{{ train_info.composition }}</div>
+            <br>
+        
+
+            {% else %}
+            <h2 class="text-center my-3"><u>{{ train_info.title }}</u></h2><br><br>
+
+            {% endif %}
+            
+
+
+           
+            <h2 class="heading">Indian Railways Travel Classes</h2>
+            <div class="table-container">
+                <table class="railway-table">
+                    <thead>
+                        <tr>
+                            <th>Class</th>
+                            <th>Code</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>First Class AC</td>
+                            <td>H</td>
+                        </tr>
+                        <tr>
+                            <td>Two-Tier AC</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>Three-Tier AC</td>
+                            <td>B</td>
+                        </tr>
+                        <tr>
+                            <td>Three-Tier AC (Economy)</td>
+                            <td>M (ICF-G)</td>
+                        </tr>
+                        <tr>
+                            <td>Executive Chair Car</td>
+                            <td>E</td>
+                        </tr>
+                        <tr>
+                            <td>Chair Car AC</td>
+                            <td>C</td>
+                        </tr>
+                        <tr>
+                            <td>Sleeper Class (Non-AC)</td>
+                            <td>S</td>
+                        </tr>
+                        <tr>
+                            <td>Second Sitting (Non-AC)</td>
+                            <td>D</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </p>
+</div>
+
+
+
+
+    <div class="right-content">
+
+        {% if  train_info.title !="No Data Found, check the train number"  %}
+
+        <p><b>Quick Links</b></p>
+        <br> 
+        
+        <a href="{{ url_for('live_status') }}">Check Live Running Status </a><br><br>
+       
+        <a href="{{ url_for('trains_tt') }}">Check Time-Table  </a><br>
+        
+
+        {% endif %}
+
+
+        <p><br>Coach Position means where will coach come at the platform at stations.
+            Some trains have long halts at stations while some have very short halt (of about 1-2 minutes only) 
+            and it gets very difficult for passengers to board safely due to rush and very less timings.
+            In such cases train coach position is very helpful as by this facility.</p>
+
+        <br>
+        <br>
+
+        <p style="color: red;">
+            Attention passengers,<br>
+            Please be informed that coach positions at certain stations, particularly during train reversals, may change. Kindly verify the coach position at your boarding station for a seamless journey experience.<br>
+            <br></p>
+            
+            <br><br>
+ 
+
+
+
+
+
+        
+    </div>
+</div>
+
+
+<div class="coach-type">
+    
+    <p>You may have plenty of experience of travelling on a train. However, being the largest railway network in the world, railways is also the most popular means of transport in India. Indian Railways is known for its variations. Indian trains are designed according to the capacity of every type of passenger. VIP level people enjoy travelling in AC 1st class, and middle-class people travel in 2nd AC. At the same time, a large part of the country’s population travels in the 3rd AC economy coach.</p>
+
+    <p>At the same time, there is a very large section of India’s population, who travels in a general coach according to their status. Coaches in these categories have their own fare. There is not only a difference in rent in these, but some basic facilities are also different.</p>
+
+    <p>People generally believe that there is only a difference of fare in different coaches of the railway, but it is not so. Facilities are also given separately in coaches of different categories. Learn about the variations of the Indian railways train travel classes and what kind of basic facilities are there in those coaches apart from the fare.</p>
+    <br><br>
+
+    <h2>Types of Coaches in Indian Railways</h2>
+    <br>
+        <h3>ICF (Integral Coach Factory)</h3>
+        <p>The ICF coach is a standard train coach used on Indian Railways main-route passengers trains. The ICF (Integral Coach Factory), at Perambur, Chennai, India has developed the specification for these coaches.</p>
+        <br>
+        <h3>LHB (Link Hofmann Bush)</h3>
+        <p>The LHB coaches are passenger coaches of the Indian Railways developed by Linck-Hofmann-Busch in Germany. Such coaches are designed for trains operating at 160 km/h and are capable of achieving a top speed of 200 km/h.</p>
+        <br><br>
+    <h2>Types of Travel Classes in Indian Railways</h2>
+    <br>
+        <h3>1A – First Class AC</h3>
+        <p>AC Tier-1 is the most expensive class of Indian Railways. The ticket price of 1A coach is equivalent to the fare of an aeroplane. The AC-1 coaches have eight cabins, and the half AC first-class coach has three cabins. The coach has a staff to help passengers. Beds are included with the rent. These types of air-conditioned coaches only exist on popular routes, and they can carry 10 or 18 passengers. Sleeper berths are very wide in AC Tier-1 coaches.</p>
+        <br>
+        <h3>2A – Two-Tier AC</h3>
+        <p>The tier-2 AC coach of the Indian railways is also air-conditioned with sleeping berths. It has legroom, curtains and an individual reading lamp. There are two levels of six sections in tier-2 AC coaches. Four seats are spread across the width of the coach and two seats to the side. To take care of the privacy of passengers, there is a curtain in every seat. In a broad gauge ICF coach, about 46 passengers can travel while up to 52 passengers can travel in an LHB coach.</p>
+        <br>
+        <h3>3A- Three-Tier AC</h3>
+        <p>This coach is also fully air-conditioned with sleeping berths. Although the seats in 3A coach are arranged in the same manner as 2AC, it has three tiers relative to its width and has two seats, i.e. eight seats in total in one coach. You don’t get the facility of the lamp of any kind to read. Also, the cost of the bedding provided in it is included in your fare. Sixty-four passengers travel in it. In broad gauge (ICF) coaches where 72 passengers can travel.</p>
+        <br>
+        <h3>3E – Three-Tier AC (Economy)</h3>
+        <p>Garib Rath Express trains have fully air-conditioned coaches with sleeping berths. The berths are usually arranged in 3A (economy).</p>
+        <br>
+        <h3>EC – Executive Chair Car</h3>
+        <p>This air-conditioned coach has a lot of space between the seats. There are a total of 4 seats in a row in each coach. Some of the trains where these coaches are used are Tejas Express and Shatabdi Express trains.</p>
+        <br>
+        <h3>CC – Chair Car AC</h3>
+        <p>CC or chair car coaches are also air-conditioned seater coaches, with only five seats in a row. Such coaches are best for day trips. Such coaches are used in Garib Rath, double-deckers and Shatabdi trains.</p>
+        <br>
+        <h3>SL – Sleeper Class (Non-AC)</h3>
+        <p>The sleeper class is the most common coach of Indian Railways, usually ten or more such coaches are added to a train. The coach has three berths in width and two in length, with 72 seats for passengers.</p>
+        <br>
+        <h3>2S – Second Sitting (Non-AC)</h3>
+        <p>Second seating coaches are the lowest class coaches. It has seats for passengers only. A berth seats 3 passengers. It has 108 seats to sit in the LHB coach.</p>
+        <br><br>
+
+    <p>So, these are the travel classes in Indian trains. You can opt for any one of these as per your budget.</p>
+</div>
+
+<br><br><br>
+
+
+<h2 class="abt">About Rail Sarthi</h2>
+<p class="abt"> Rail Sarthi, your premier destination for all things trains. 
+    Whether you're a frequent traveler or simply curious about the world of railways, we've got you covered. 
+    At Rail Sarthi, we offer a comprehensive range of services designed to make your train travel experience smooth and enjoyable. 
+    From detailed information on train fares and cancellation policies to engaging vlogs that delve into the rich history and fascinating facts behind train names, our platform is your go-to resource.
+    Explore our curated content to discover the origins of iconic train names and uncover intriguing stories from the railways' past. 
+    Plan your journeys effortlessly with our user-friendly tools that provide fare estimates, route maps, and everything you need to know to navigate the rail network with ease. Whether you're looking for    
+    practical travel advice or simply want to immerse yourself in the world of trains through captivating vlogs, Rail Sarthi is here to be your trusted companion on every rail adventure. 
+    Join us as we embark on a journey to celebrate the marvels of rail travel and expand your knowledge of this timeless mode of transportation.
+   </p>
+
+    <p class="abt">
+    <a href="/">
+        <img src="{{ url_for('static', filename="RAIL_SARTHI.png") }}" width="200" height="40" >
+        <br> 
+    </a>© Copy right 2024. Rail Sarthi
+    <br> <br> </p>
+
+
+
+
+
+</body>
+
+</main>
+</body>
+</html>

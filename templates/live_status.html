@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Train Running Status | Rail Sarthi</title>
+
+<style>
+    
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 8%;
+        display: flex;
+        justify-content: center;
+        align-items: center;    
+        padding: 10px 15px;
+        background-color: white;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    
+    .logo {  
+        padding-left:490px;
+        max-height: 100%; 
+    }
+    
+    .side-drawer-button {
+        position: absolute;       
+        left: 15px;            
+        margin-bottom: 10px;
+    }
+
+
+
+
+@media (max-width: 700px) {
+.logo{
+    padding-left:80px;
+    margin-right: 16px;
+    margin-left: 0px;
+    width:70%; 
+    height: auto;
+}
+}
+
+
+  .info-box {
+    width: 1300px;
+    height: 500px;
+    overflow-y: auto;
+    border-radius:20px;
+    font-size: 15px;
+    box-shadow: 1.5px 1.5px 4px #666687, -1.5px -1.5px 4px rgba(0.1, 0.1, 0, 0.1), 1.5px -1.5px 4px rgba(0.1, 0.1, 0, 0.1), -1.5px 1.5px 4px rgba(0.1, 0.1, 0, 0.1);
+    overflow-x: hidden; 
+    text-align:center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-sizing: border-box; 
+    border-color: #666687;
+    margin-top:-100px; 
+  }
+  
+
+  .info-box {
+    padding-top: 0;
+  }
+
+
+.search-form{
+    padding-left:160px;
+    
+}
+
+
+table {
+    border-radius:20px;
+    width: 100%;
+    hborder-collapse: collapse;
+
+}
+
+th, td,tr,tbody,thead {
+    padding:10px;
+    margin-left:15px;
+    border: none;
+    text-align: left;
+    border-left: none; /* Remove left border */
+    border-right: none; /* Remove right border */
+    position: relative;
+    overflow: visible; /* Allow overflow */
+    overflow-y: auto;
+}
+
+
+th:first-child, td:first-child {
+    border-left: none; /* Remove border from the first column */
+}
+th:last-child, td:last-child {
+    border-right: none;
+}   
+
+table {
+    border-collapse: collapse; /* Ensure borders do not double up */
+    width: 100%;
+}
+
+td, th {
+    border-color:  #666687;
+    border-bottom: 0.5px solid;
+    border-left: none; /* Remove left border */
+    border-right: none; /* Remove right border */
+    position: relative;
+    overflow: visible; /* Allow overflow */
+}
+
+
+
+
+
+
+.optionbox{
+    padding-right:30px;
+        display:  inline-block;
+        width: 170px;
+        height:-10px;
+        padding: 8px;
+        font-size: 12px;
+        color: #495057;
+        background-color: #fff;
+        border: 1px solid #666687;
+        border-radius: 30px;
+        text-align:center;
+
+
+        -webkit-appearance: none; /* Remove default styling in WebKit browsers */
+        -moz-appearance: none; /* Remove default styling in Firefox */
+        appearance: none; /* Remove default styling in modern browsers */
+
+        background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="5" viewBox="0 0 4 5"><path fill="none" stroke="%23666" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>') no-repeat right 10px center;
+        background-color:  #cccccc6c;
+
+    }
+
+
+    .optionbox:focus,
+    .optionbox:active {
+        border-color:  #666687; 
+
+    }
+
+
+    .search-button{
+       margin-left: 25px;
+       height: 35px;
+       width:100px;
+       font-size:14px;
+    }
+
+
+
+
+.vertical-line {
+    width: 2px;
+    height: 100%; /* Adjust the height as needed */
+    background-color: #666687;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+}
+
+
+.blue-dot {
+    width: 10px;
+    height: 10px;
+    background-color:#666687;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+thead{
+    position: sticky;
+    background-color: #666687;
+    border-radius:10px;
+    padding-top:-100px;
+    top: 0;
+    z-index: 1;
+}
+
+
+.centered-text {
+    text-align: center; /* Centers the text horizontally */
+    margin-left: 100px; /* Adjust as needed */
+    margin-right: 100px; /* Adjust as needed */
+    background-color: #66668756;
+    border-radius:10px;
+    padding:15px;
+
+}
+
+
+  
+
+</style>
+
+
+
+
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='home_page.css') }}">
+</head>
+<body>
+
+
+
+    <header class="header">
+        <button class="side-drawer-button" id="toggle-btn">☰</button>
+
+        <a href="/">
+            <img src="{{ url_for('static', filename='RAIL SARTHI.png') }}" width="200" height="40" class="logo">
+        </a>
+
+        <button class="login-signup">LogIn/SignUp</button>
+    </header>
+
+
+
+
+
+
+
+
+
+<div id="side-drawer" class="side-drawer">
+    <br><br><br>
+
+    <br>
+
+    <a>SERVICES</a>
+
+    <a href="{{ url_for('trains_tt') }}">
+        <img src="static/tt.png" width="20" height="20">
+        <span class="link-text">Train Time Table</span>
+    </a>
+
+    <a href="{{ url_for('live_status') }}">
+        <img src="static/live_status.png" width="20" height="20">
+        <span class="link-text">Live Train Status</span>
+    </a>
+    <a href="{{ url_for('show_coach_position') }}">
+        <img src="static/coachpos.png" width="20" height="20">
+        <span class="link-text">Train Coach Position</span>
+    </a>
+  
+    <br><hr><br>
+
+
+    <a>FEATURES</a>
+
+    <a href="{{ url_for('fare') }}">
+        <img src="static/calc.png" width="20" height="20">
+        <span class="link-text">Fare Calculator</span>
+    </a>
+
+    <a href="{{ url_for('announcement') }}">
+        <img src="static/trainfacts.png" width="20" height="20">
+        <span class="link-text">Announcements</span>
+    </a>
+    <a href="{{ url_for('facts') }}">
+        <img src="static/trainfact.png" width="20" height="20">
+        <span class="link-text">Train Facts</span>
+    </a>
+
+
+</div>
+<div id="overlay" class="overlay"></div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+<br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+<div class="search-form">
+    <form action="{{ url_for('live_status') }}" method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.train_n.label }} {{ form.train_n() }}
+
+        {{ form.selected_date.label }}{{ form.selected_date(class_="optionbox") }}
+        
+        {{ form.submit(class_="search-button") }} 
+    </form>
+</div>
+
+
+
+
+
+
+
+<br><br>
+    <h2 align="center"><u> {{name}} Live Train Running Status</u></h2>
+    <br>
+   
+<p class="centered-text">{{live_pos}}</p>
+    <br><br><br><br><br><br><br>
+<div class="info-box">
+
+<table>
+    <thead width="100%">
+        <tr>
+        <th>Station</th>
+        <th></th>
+        <th>Sch./Act. Arrival</th>
+        <th>Sch./Act. Departure</th>
+        <th>PF</th>
+        </tr>
+    </thead>
+
+
+
+<tbody class="info-box">
+    {% for each in data %}
+    <tr>
+        
+        <td>{{each[0]}}</td>
+
+        <td>
+
+            <div class="vertical-line-container">
+            <div class="vertical-line"></div>
+           <div class="blue-dot"></div>
+            </div>
+            
+            &nbsp&nbsp
+
+         </td>
+
+        <td>{{each[1]}}<br><div style="color: red;">{{each[2]}}</div></td>
+        <td>{{each[3]}}<br><div style="color: red;">{{each[4]}}</div></td>
+        <td>{{each[5]}}</td>
+    
+        {% endfor %}
+
+    </tr>
+
+    <br>
+</tbody>
+</table>
+</div>
+
+
+
+<br><br><br>
+
+
+<h2 class="abt">About Rail Sarthi</h2>
+<p class="abt"> Rail Sarthi, your premier destination for all things trains. 
+    Whether you're a frequent traveler or simply curious about the world of railways, we've got you covered. 
+    At Rail Sarthi, we offer a comprehensive range of services designed to make your train travel experience smooth and enjoyable. 
+    From detailed information on train fares and cancellation policies to engaging vlogs that delve into the rich history and fascinating facts behind train names, our platform is your go-to resource.
+    Explore our curated content to discover the origins of iconic train names and uncover intriguing stories from the railways' past. 
+    Plan your journeys effortlessly with our user-friendly tools that provide fare estimates, route maps, and everything you need to know to navigate the rail network with ease. Whether you're looking for    
+    practical travel advice or simply want to immerse yourself in the world of trains through captivating vlogs, Rail Sarthi is here to be your trusted companion on every rail adventure. 
+    Join us as we embark on a journey to celebrate the marvels of rail travel and expand your knowledge of this timeless mode of transportation.
+   </p>
+
+    <p class="abt">
+    <a href="/">
+        <img src="{{ url_for('static', filename="RAIL_SARTHI.png") }}" width="200" height="40" >
+        <br> 
+    </a>© Copy right 2024. Rail Sarthi
+    <br> <br> </p>
+
+

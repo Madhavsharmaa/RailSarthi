@@ -1,0 +1,572 @@
+    *{
+        font-family: 'Montserrat', sans-serif;
+        margin: 0px auto;
+    }
+
+    .header {
+        position: fixed;
+        top: 0; 
+        left: 0;
+        width: 100%; 
+        height: 8%;
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        background-color: white;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        font-family: 'Montserrat', sans-serif;        
+    }
+
+
+    .bg-image {
+        background-image: url('g.png'); 
+        background-size: 1330px auto; 
+        background-position: center top; 
+        background-repeat: no-repeat; 
+        height: 60vh;
+        overflow: hidden; 
+        position: relative; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        width: 100%;
+    
+    }
+
+    .side-drawer-button {
+        font-size: 50px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        margin-right: 20px; 
+        margin-bottom: 10px;
+    }
+
+    .logo{  
+        margin-right: 130px;
+    }
+
+    .search-form {
+        display: flex;
+        align-items: center;
+        margin-right: 20px; 
+    }
+
+    .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        position: relative;
+    }
+
+
+
+    .search-form input[type="text"] {
+        font-family: 'Montserrat', sans-serif;
+        padding: 8px;
+        border: 1px solid #ccc;
+        background-color: #cccccc6c;
+        width: 500px;
+        border-radius: 120px; 
+        margin-right: 20px; 
+        outline: none; 
+    }
+
+
+    .search-form input[type="text"]:hover {
+        border-color: #ccc;
+    }
+
+    .search-form input[type="text"]:focus {
+        border-color:  #666687; 
+    }
+
+    .search-form .search-button{
+        font-family: 'Montserrat', sans-serif;
+        padding: 8px 16px;
+        background-color: #8EF4F3;
+        color: #fff;
+        border: none;
+        border-radius: 50px; 
+        cursor: pointer;
+        margin-right: 150px;
+    }
+
+    .search-form .search-button:hover{
+        background-color: #666687; 
+    }
+
+
+    .side-drawer-button {
+        background: none;
+        border: none;
+        color: #000000;
+        
+        font-size: 48px;
+        cursor: pointer;
+    }
+
+
+    .login-signup {
+        text-decoration: none;
+        background-color: transparent;
+        border: none;
+        color: #000; 
+        font-size: 16px; 
+        cursor: pointer; 
+        font-family: 'Montserrat', sans-serif;
+        color: #666687; 
+    }
+
+    .login-signup :hover {
+        border-color: #666687; 
+        font-size: 19px;
+    }
+
+
+
+    .side-drawer {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 100;
+        padding: 10px;
+        left: 0;
+        background-color: #fffcfc;
+        overflow-x: hidden;
+        transition: 1;
+        padding-top: 50px;
+        opacity: 0;
+        transition: width 0.5s, opacity 0.5s ease;
+        
+    }
+
+    .side-drawer a {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        padding: 6px 3px 8px 32px;
+        text-decoration: none;
+        font-size: 13px;
+        color: #000000;
+        text-align: left;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .side-drawer a:hover{
+    background-color: rgba(172, 169, 169, 0.196);
+    border-radius: 15px
+    }
+
+    .side-drawer img {
+        margin-right: 10px;
+        align-items: center
+    }
+
+    .side-drawer .link-text {
+        padding-left: 3px; 
+        align-items: center 
+    }
+
+
+    
+    .overlay {
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #8d8d8d8f;
+        z-index: 1;
+    }
+
+
+
+
+    .search-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: 30%; 
+    }
+
+    .search-form-header {
+        color: #000000ca;
+        padding-left: 0x;
+        text-align: left;
+        margin-top: 20px;
+        display: flex;
+    }
+
+    .search-form-screen {
+    display: flex;
+    text-align: center;
+    padding:  28px;
+    background-color: rgb(255, 255, 255); 
+    border-radius: 20px;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    box-shadow: 1.5px 1.5px 4px rgba(0.1, 0.1, 0, 0.1), -1.5px -1.5px 4px rgba(0.1, 0.1, 0, 0.1), 1.5px -1.5px 4px rgba(0.1, 0.1, 0, 0.1), -1.5px 1.5px 4px rgba(0.1, 0.1, 0, 0.1);   
+    }
+
+    .search-form-screen form {
+        text-align: center;
+        justify-content: center
+    }
+
+    .search-form-screen input[type="text"] {
+        font-family: 'Montserrat';
+        font-size: 18px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        background-color: #cccccc6c;
+        width: 400px; 
+        height: 45px; 
+        margin: 5px; 
+        outline: none;
+    }
+
+    .search-form-screen .input-first {
+        border-radius: 20px 0 0 20px;
+    }
+
+    .search-form-screen .input-last {
+        border-radius: 0 20px 20px 0;
+    }
+
+    .search-form-screen input[type="text"]:hover {
+        border-color: #ccc; /* Change border color on hover */
+    }
+
+    .search-form-screen input[type="text"]:focus {
+        border-color: #666687;  
+    }
+
+    
+    .search-form-screen .button {
+        font-family: 'Montserrat';
+        font-size: 20px; 
+        width: 140px;
+        height: 55px;
+        background-color: #8EF4F3;
+        color: #fff;
+        border: none;
+        border-radius: 20px; 
+        cursor: pointer;
+        margin: 5px; 
+    }    
+
+    .search-form-screen .button:hover {
+        background-color: #666687;
+    }
+
+    .search-form-screen a,
+    .search-form-screen img {
+        border-color: #666687; 
+        border-radius: 20px;
+    }
+
+    .hover-shadow { 
+        transition: box-shadow 0.3s; /* Smooth transition for shadow change */
+    }
+    
+    .hover-shadow:hover {
+        background-color: #666687; 
+        box-shadow: 0 0 2px #666687;  /* Shadow color when hovering */
+    }
+
+
+    .bottom-heading {
+        color: #000000ca;
+        padding-left: 100px;
+        text-align: left;
+        margin-top: 20px;
+        display: flex;
+    }
+
+    .search-exp {
+        display: flex;
+        text-align: center;
+        padding: 28px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 20px;
+        box-shadow: 1.5px 1.5px 4px rgba(0.1, 0.1, 0, 0.1), -1.5px -1.5px 4px rgba(0.1, 0.1, 0, 0.1), 1.5px -1.5px 4px rgba(0.1, 0.1, 0, 0.1), -1.5px 1.5px 4px rgba(0.1, 0.1, 0, 0.1);
+    }
+
+    .exp-more {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        top: 90%;
+        min-width: 80%; 
+        }
+
+
+        .exp-more a {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            padding: 6px 3px 8px 25px;
+            text-decoration: none;
+            font-size: 15px bold;
+            color: #000000;
+            text-align: left;
+            display: block;
+            transition: 0.3s;
+        }
+    
+        .exp-more a:hover{
+        background-color: rgba(172, 169, 169, 0.196);
+        border-radius: 15px
+        }
+    
+        .exp-more img {
+            margin-right: 5px;
+            align-items: center;
+        }
+
+
+    .link-text1 {
+        display: inline-block;
+        color: #000;
+        margin: 0px 40px;
+        align-items: flex-start; 
+        vertical-align: 90%;
+        font-weight: bold; 
+    }
+
+
+    .link-text2 {
+        display: inline-flex;
+        justify-content: center; /* Horizontally center */
+        align-items: center; /* Vertically center */
+        color: #000;
+        font-weight: bold;
+        margin: 0px 40px;
+        width: 200px;
+        height: 30px; /* Adjust height as needed */
+        padding: 0 10px;
+    }
+
+.faq-section {
+    max-width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    color: #000000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-bottom: 1px solid #666687; 
+}
+
+
+.faq-question h3 {
+    cursor: pointer;
+    margin: 0;
+}
+
+.faq-answer {
+    display: none;
+    margin-top: 10px;
+}
+
+.faq-question h3:hover {
+    color: #b9b9b9;
+}
+
+.faq.open .faq-answer {
+    
+    display: block;
+}
+
+.features-list{
+    max-width: 80%;
+    background-color: #5e5e6e36;
+    border-radius: 20px;
+    margin: 50px auto;
+    padding: 30px;
+    font-size: 15px;
+    box-shadow: 1.5px 1.5px 4px #66668756, -1.5px -1.5px 4px rgba(0.1, 0.1, 0, 0.1), 1.5px -1.5px 4px rgba(0.1, 0.1, 0, 0.1), -1.5px 1.5px 4px rgba(0.1, 0.1, 0, 0.1);
+ 
+}
+
+
+.abt{
+    max-width: 100%;
+    background-color: #a5a5a589;
+    margin: 0px auto;
+    padding-top:30px;
+    padding-right: 90px;
+    padding-left: 90px;
+    font-size: 17px;
+}    
+
+    @media (max-width: 700px) {
+    *{
+        font-family: 'Montserrat', sans-serif;
+        margin: 0px auto;
+        overflow-x: visible; /* Ensures any overflow content is visible */
+
+
+.features-list{
+    font-size: 10px;
+    font-weight: bold;
+
+}
+
+    .abt,
+    .faq,
+    .faq-section{
+        padding-top:10px;
+        padding-right: 40px;
+        padding-left: 40px;
+        font-size: 10px;
+    }
+
+    }
+
+    
+        .login-signup {
+            opacity: 0;
+            font-size: 14px;
+            animation: fadeOut 0.5s forwards; /* Apply fade out animation */
+            margin-right: 0px;
+        }
+
+
+        .logo{
+            margin-right: 16px;
+            margin-left: 24px;
+            width:220px;
+            animation: fadeOut 0.5s forwards; 
+            height: auto;
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    }
+
+
+    @media (max-width: 1150px) {
+        .search-form input[type="text"],
+        .search-button{
+            display: none;
+            margin-right: 00px
+        }                                   
+        
+    }
+    
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: hidden; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.661); /* Black w/ opacity */
+    }
+    /* Modal Content */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 30px;
+        border: 1px solid #888;
+        border-radius: 30px;
+        width: 700px; /* Could be more or less, depending on screen size */
+        height: 300px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+
+    }
+
+
+
+
+
+
+    /* The Close Button */
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 15px;
+    }
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .login-signup {
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+
+
+    .login-signup-form input[type="text"],
+    .login-signup-form input[type="email"] {
+        font-family: 'Montserrat', sans-serif;
+        padding: 8px;
+        border: 1px solid #ccc;
+        background-color: #cccccc6c;
+        width: 300px;
+        height: 30px;
+        border-radius: 40px; 
+        margin-right: 20px; 
+        outline: none; 
+
+        flex: 1;
+        margin-right: 20px;
+
+        
+    }
+
+
+    .login-signup-form .search-button{
+        font-family: 'Montserrat', sans-serif;
+        padding: 8px 16px;
+        background-color: #8EF4F3;
+        color: #fff;
+        border: none;
+        border-radius: 50px; 
+        cursor: pointer;
+    }
+
+    .login-signup-form .search-button:hover{
+        background-color: #666687;
+    }
+
+
