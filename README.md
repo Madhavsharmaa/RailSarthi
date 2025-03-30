@@ -11,8 +11,17 @@ Dedicated to providing a seamless and informative travel experience, Rail Sarthi
 
 
 
-## 🏠 Home
-Welcome to the project! This section contains an introduction and overview.
+## 🚀 Tech Stack
+
+| **Component**       | **Technology** |
+|---------------------|---------------|
+| **Frontend**       | HTML, CSS |
+| **Backend**        | Flask |
+| **Templating Engine** | Jinja2 (for dynamic HTML rendering) |
+| **Database**       | MySQL |
+| **Authentication** | 🔹 Flask-Login (for session-based auth) <br> 🔹 JWT (`Flask-JWT-Extended`) (for API-based auth) |
+| **Security**       | 🔹 Flask-WTF (for CSRF protection) <br> 🔹 Bcrypt (`Flask-Bcrypt`) or Argon2 for password hashing <br> 🔹 Rate limiting (`Flask-Limiter`) <br> 🔹 HTTPS with SSL/TLS (if hosting externally) |
+| **Hosting**        | 🔹 **Render** (free, easy for Flask) <br> 🔹 **Railway.app** (free & simple) <br> 🔹 **Vercel** (for frontend) + **Backend on Render/Railway** <br> 🔹 **AWS/Google Cloud/Azure** (for enterprise-level) |
 
 
 ## 📝 Notes
