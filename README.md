@@ -4,12 +4,14 @@ Rail Sarthi features an extensive timetable for various trains, detailing arriva
 One unique aspect of Rail Sarthi is its exploration of train name etymology. This feature delves into the origins and meanings behind the names of various trains, revealing how these names reflect cultural, geographical, and historical contexts. Whether the names honor historical figures, describe significant landmarks, or highlight important features, Rail Sarthi provides a deeper connection to the heritage and significance of railway travel. 
 Dedicated to providing a seamless and informative travel experience, Rail Sarthi stands as a valuable resource for all aspects of train travel, assisting users in planning their trips and gaining a richer understanding of the railways.
 
-
+<br>
+<br>
 
 ## 📸 Screenshot
-![Screenshot](jjj.png).
+![Screenshot](jjj.png)
 
-
+<br>
+<br>
 
 ## 🚀 Tech Stack
 
@@ -23,14 +25,16 @@ Dedicated to providing a seamless and informative travel experience, Rail Sarthi
 | **Security**       | 🔹 Flask-WTF (for CSRF protection) <br> 🔹 Bcrypt (`Flask-Bcrypt`) or Argon2 for password hashing <br> 🔹 Rate limiting (`Flask-Limiter`) <br> 🔹 HTTPS with SSL/TLS (if hosting externally) |
 | **Hosting**        | 🔹 **Render** (free, easy for Flask) <br> 🔹 **Railway.app** (free & simple) <br> 🔹 **Vercel** (for frontend) + **Backend on Render/Railway** <br> 🔹 **AWS/Google Cloud/Azure** (for enterprise-level) |
 
-
+<br>
+<br>
 
 ## 📝 Notes
 🔹 Install Mysql, pip
 🔹 Install all the libraries used in the training_proj.py file
 🔹 Upload the stations.csv on Mysql as in the database to be named as 'stations_db' and 'stations' the name of Table.
 
-
+<br>
+<br>
 
 ## Contact
 For any queries or suggestions, feel free to reach out:
