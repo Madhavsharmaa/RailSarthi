@@ -24,7 +24,18 @@ Dedicated to providing a seamless and informative travel experience, Rail Sarthi
 | **Hosting**        | 🔹 **Render** (free, easy for Flask) <br> 🔹 **Railway.app** (free & simple) <br> 🔹 **Vercel** (for frontend) + **Backend on Render/Railway** <br> 🔹 **AWS/Google Cloud/Azure** (for enterprise-level) |
 
 
+
 ## 📝 Notes
-Additional notes, references, and important information.
+🔹 Install Mysql, pip
+🔹 Install all the libraries used in the training_proj.py file
+🔹 Upload the stations.csv on Mysql as in the database to be named as 'stations_db' and 'stations' the name of Table.
+
+
+
+## Contact
+For any queries or suggestions, feel free to reach out:
+Email: smsmadhavsharma@gmail.com
+GitHub: Madhavsharmaa
+
 
 
