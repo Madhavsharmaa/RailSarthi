@@ -12,7 +12,7 @@ Dedicated to providing a seamless and informative travel experience, Rail Sarthi
 Welcome to the project! This section contains an introduction and overview.
 
 ## 📊 Stats
-![Screenshot]().
+![Screenshot](jjj.png).
 
 ## 📝 Notes
 Additional notes, references, and important information.
