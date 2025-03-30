@@ -29,16 +29,16 @@ Dedicated to providing a seamless and informative travel experience, Rail Sarthi
 <br>
 
 ## 📝 Notes
-🔹 Install Mysql, pip
-🔹 Install all the libraries used in the training_proj.py file
+🔹 Install Mysql, pip<br>
+🔹 Install all the libraries used in the training_proj.py file<br>
 🔹 Upload the stations.csv on Mysql as in the database to be named as 'stations_db' and 'stations' the name of Table.
 
 <br>
 <br>
 
 ## Contact
-For any queries or suggestions, feel free to reach out:
-Email: smsmadhavsharma@gmail.com
+For any queries or suggestions, feel free to reach out:<br>
+Email: smsmadhavsharma@gmail.com<br>
 GitHub: Madhavsharmaa
 
 
