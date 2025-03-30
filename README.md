@@ -5,14 +5,15 @@ One unique aspect of Rail Sarthi is its exploration of train name etymology. Thi
 Dedicated to providing a seamless and informative travel experience, Rail Sarthi stands as a valuable resource for all aspects of train travel, assisting users in planning their trips and gaining a richer understanding of the railways.
 
 
+
 ## 📸 Screenshot
+![Screenshot](jjj.png).
+
 
 
 ## 🏠 Home
 Welcome to the project! This section contains an introduction and overview.
 
-## 📊 Stats
-![Screenshot](jjj.png).
 
 ## 📝 Notes
 Additional notes, references, and important information.
