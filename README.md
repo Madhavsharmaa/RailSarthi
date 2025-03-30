@@ -15,8 +15,8 @@ Dedicated to providing a seamless and informative travel experience, Rail Sarthi
 
 | **Component**       | **Technology** |
 |---------------------|---------------|
-| **Frontend**       | HTML, CSS |
-| **Backend**        | Flask |
+| **Frontend**       | HTML, CSS, Javascript |
+| **Backend**        | Flask, Python |
 | **Templating Engine** | Jinja2 (for dynamic HTML rendering) |
 | **Database**       | MySQL |
 | **Authentication** | 🔹 Flask-Login (for session-based auth) <br> 🔹 JWT (`Flask-JWT-Extended`) (for API-based auth) |
